@@ -1,6 +1,5 @@
 import torch
 
-
 class MemeClassifier(torch.nn.Module):
     def __init__(self, img_encoder, text_encoder, num_classes=2):
         super().__init__()
@@ -10,8 +9,7 @@ class MemeClassifier(torch.nn.Module):
         self.classifier = torch.nn.Linear(512+768, num_classes)
 
     def forward(self, image, input_ids, attention_mask):
-        # Encode the image
-
+        # Encode the image and text
         image_features = self.img_encoder.encode_image(image)
         text_features = self.text_encoder(input_ids=input_ids, attention_mask=attention_mask)
 
