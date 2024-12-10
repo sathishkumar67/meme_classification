@@ -1,10 +1,7 @@
-import os
 import clip
-from PIL import Image
 import torch
 from torch.utils.data import DataLoader, random_split
 from transformers import BertTokenizer, BertModel
-from torchvision import datasets, transforms
 from dataset import MemeDataset
 from model import MemeClassifier
 from tqdm import tqdm
